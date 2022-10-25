@@ -1,6 +1,7 @@
 import {QueryClient, QueryClientProvider} from 'react-query';
 import styled from '@emotion/styled';
 import Toast from './toast';
+import {ContextProvider} from '../hooks/useContext';
 
 const RootDiv = styled.div`
   margin-left: 8px;
@@ -21,10 +22,12 @@ function MyApp({Component, pageProps}) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RootDiv>
-        <Component {...pageProps} />
-      </RootDiv>
-      <Toast />
+      <ContextProvider>
+        <RootDiv>
+          <Component {...pageProps} />
+        </RootDiv>
+        <Toast />
+      </ContextProvider>
     </QueryClientProvider>
   );
 }

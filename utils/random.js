@@ -5,8 +5,8 @@ export const getRandomNumberOfSize = (size) => {
 };
 
 export const randomApiWait = async () => {
-  const randomMs = getRandomNumberOfSize(2000);
-  const ms = randomMs + 1000;
+  const randomMs = getRandomNumberOfSize(1000);
+  const ms = randomMs + 500;
 
   await waitMs(ms);
 };
