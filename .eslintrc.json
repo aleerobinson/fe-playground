@@ -1,0 +1,33 @@
+{
+  "extends": ["react-app", "eslint:recommended"],
+  "plugins": ["import", "flowtype", "jsx-a11y", "react", "@typescript-eslint"],
+  "rules": {
+    "no-useless-computed-key": "off",
+    "no-useless-rename": "off",
+    "import/no-unresolved": "off",
+    "no-extra-boolean-cast": "off",
+    "no-prototype-builtins": "off",
+    "no-case-declarations": "off",
+    "no-console": "warn"
+  },
+  "overrides": [
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ]
+      }
+    }
+  ]
+}
